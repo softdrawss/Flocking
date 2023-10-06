@@ -336,11 +336,10 @@ MonoBehaviour:
   fishprefab: {fileID: 812968932916327153, guid: dfbe6b4e4e226864ab1b7f536d805dfc, type: 3}
   numFish: 50
   allFish: []
-  swimLimits: {x: 25, y: 25, z: 25}
+  swimLimits: {x: 30, y: 30, z: 30}
   bounded: 1
   randomize: 1
-  followLeader: 0
-  leader: {fileID: 0}
+  followLeader: 1
   bound:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
