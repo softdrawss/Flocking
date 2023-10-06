@@ -6,21 +6,27 @@ using UnityEngine;
 public class Flocking : MonoBehaviour
 {
     public FlockingManager myManager;
+    float intervalTime;
     float speed;
     Vector3 direction;
+
+    void Start()
+    {
+        StartCoroutine(NewHeading());
+
+
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        foreach (GameObject go in myManager.allFish)
-        {
-            direction = (Cohesion() + Align() + Separation()).normalized * speed;
-        }
 
         transform.rotation = Quaternion.Slerp(transform.rotation,
-                                      Quaternion.LookRotation(direction),
-                                      myManager.rotationSpeed * Time.deltaTime);
+                                           Quaternion.LookRotation(direction),
+                                           myManager.rotationSpeed * Time.deltaTime);
         transform.Translate(0.0f, 0.0f, Time.deltaTime * speed);
+
     }
 
     Vector3 Cohesion()
@@ -72,6 +78,7 @@ public class Flocking : MonoBehaviour
 
     Vector3 Separation()
     {
+        Vector3 rand = UnityEngine.Random.insideUnitCircle * 10;
         Vector3 separation = Vector3.zero;
         foreach (GameObject go in myManager.allFish)
         {
@@ -82,8 +89,46 @@ public class Flocking : MonoBehaviour
                 if (distance <= myManager.neighbourDistance)
                     separation -= (transform.position - go.transform.position) /
                                   (distance * distance);
+                separation -= rand;
             }
         }
         return separation;
+    }
+
+    IEnumerator NewHeading()
+    {
+        intervalTime = Random.Range(0.0f,1.0f);
+        while (true)
+        {
+            foreach (GameObject go in myManager.allFish)
+            {
+                // Seek
+                if (myManager.followLeader)
+                {
+                    
+                    if(go == myManager.allFish[0])
+                    {
+                        direction = (Cohesion() + Align() + Separation()).normalized * speed;
+                        print("leader change posiiton");
+                    }
+                    //else
+                    //{
+                    //    direction = myManager.allFish[0].transform.position - go.transform.position;
+                    //    print("everyone");
+                    //}
+                    break;
+                }
+
+                //if (myManager.bounded && myManager.bound.Contains(go.transform.position))
+                //{
+                //    direction = (Cohesion() + Align() + Separation()).normalized * speed;
+                //}
+                //else
+                //{
+                //    direction = myManager.bound.center - go.transform.position;
+                //}
+            }
+            yield return new WaitForSeconds(intervalTime);
+        }
     }
 }

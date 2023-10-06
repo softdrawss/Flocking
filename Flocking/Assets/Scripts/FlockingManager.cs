@@ -11,8 +11,8 @@ public class FlockingManager : MonoBehaviour
     public Vector3 swimLimits;
     public bool bounded = true;
     public bool randomize = true;
-    public bool followLeader = false;
-    public Transform leader;
+    public bool followLeader = true;
+    public Bounds bound;
 
     [Header("Fish Settings")]
     public float minSpeed = 5;
@@ -24,10 +24,12 @@ public class FlockingManager : MonoBehaviour
     void Start()
     {
         allFish = new GameObject[numFish];
+        bound = new Bounds(Vector3.zero, swimLimits);
+
         for (int i = 0; i < numFish; ++i)
         {
 
-            Vector3 pos = this.transform.position + Random.insideUnitSphere;
+            Vector3 pos = this.transform.position + Random.insideUnitSphere * 10;
             Vector3 randomize = Random.insideUnitSphere;
 
             allFish[i] = (GameObject)Instantiate(fishprefab, pos,

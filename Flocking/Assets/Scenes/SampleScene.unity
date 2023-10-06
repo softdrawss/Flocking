@@ -334,13 +334,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishprefab: {fileID: 812968932916327153, guid: dfbe6b4e4e226864ab1b7f536d805dfc, type: 3}
-  numFish: 10
+  numFish: 50
   allFish: []
-  swimLimits: {x: 100, y: 100, z: 100}
+  swimLimits: {x: 25, y: 25, z: 25}
   bounded: 1
   randomize: 1
   followLeader: 0
   leader: {fileID: 0}
+  bound:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   minSpeed: 3
   maxSpeed: 6
   neighbourDistance: 100
@@ -416,7 +419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223011638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.78182626, y: 1.2489005, z: 6.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7.3198, y: 7.3198, z: 7.3198}
   m_ConstrainProportionsScale: 0
   m_Children: []
