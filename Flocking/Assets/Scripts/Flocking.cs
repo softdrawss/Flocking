@@ -7,7 +7,7 @@ public class Flocking : MonoBehaviour
 {
     public FlockingManager myManager;
     float intervalTime;
-    float speed = 5;
+    float speed;
     Vector3 direction;
 
     void Start()
