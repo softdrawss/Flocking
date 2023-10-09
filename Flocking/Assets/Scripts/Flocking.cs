@@ -7,26 +7,22 @@ public class Flocking : MonoBehaviour
 {
     public FlockingManager myManager;
     float intervalTime;
-    float speed;
+    float speed = 5;
     Vector3 direction;
 
     void Start()
     {
         StartCoroutine(NewHeading());
-
-
     }
 
 
     // Update is called once per frame
     void Update()
     {
-
         transform.rotation = Quaternion.Slerp(transform.rotation,
                                            Quaternion.LookRotation(direction),
                                            myManager.rotationSpeed * Time.deltaTime);
         transform.Translate(0.0f, 0.0f, Time.deltaTime * speed);
-
     }
 
     Vector3 Cohesion()
@@ -102,31 +98,31 @@ public class Flocking : MonoBehaviour
         {
             foreach (GameObject go in myManager.allFish)
             {
-                // Seek
-                if (myManager.followLeader)
-                {
-                    
-                    if(go == myManager.allFish[0])
-                    {
-                        direction = (Cohesion() + Align() + Separation()).normalized * speed;
-                        print("leader change posiiton");
-                    }
-                    //else
-                    //{
-                    //    direction = myManager.allFish[0].transform.position - go.transform.position;
-                    //    print("everyone");
-                    //}
-                    break;
-                }
+                //// Seek
+                //if (myManager.followLeader)
+                //{
 
-                //if (myManager.bounded && myManager.bound.Contains(go.transform.position))
-                //{
-                //    direction = (Cohesion() + Align() + Separation()).normalized * speed;
+                //    //if(go == myManager.allFish[0])
+                //    //{
+                //    //    direction = (Cohesion() + Align() + Separation()).normalized * speed;
+                //    //    print("leader change posiiton");
+                //    //}
+                //    //else
+                //    //{
+                //    direction = myManager.allFish[0].transform.position - go.transform.position;
+                //    print("everyone");
+                //    //}
+                //    break;
                 //}
-                //else
-                //{
-                //    direction = myManager.bound.center - go.transform.position;
-                //}
+
+                if (myManager.bounded == true && myManager.bound.Contains(go.transform.position) == true)
+                {
+                    direction = (Cohesion() + Align() + Separation()).normalized * speed;
+                }
+                else
+                {
+                    direction = (myManager.bound.center - transform.position).normalized;
+                }   
             }
             yield return new WaitForSeconds(intervalTime);
         }

@@ -6,17 +6,17 @@ public class FlockingManager : MonoBehaviour
 {
     Flocking flock;
     public GameObject fishprefab;
-    public int numFish = 10;
+    public int numFish = 50;
     public GameObject[] allFish;
     public Vector3 swimLimits;
     public bool bounded = true;
     public bool randomize = true;
-    public bool followLeader = true;
+    public bool followLeader = false;
     public Bounds bound;
 
     [Header("Fish Settings")]
     public float minSpeed = 5;
-    public float maxSpeed = 0;
+    public float maxSpeed = 10;
     public float neighbourDistance;
     public float rotationSpeed;
 
@@ -24,7 +24,7 @@ public class FlockingManager : MonoBehaviour
     void Start()
     {
         allFish = new GameObject[numFish];
-        bound = new Bounds(Vector3.zero, swimLimits);
+        bound = new Bounds(fishprefab.transform.position, swimLimits);
 
         for (int i = 0; i < numFish; ++i)
         {
