@@ -11,7 +11,7 @@ public class FlockingManager : MonoBehaviour
     public Vector3 swimLimits;
     public bool bounded = true;
     public bool randomize = true;
-    public bool followLeader = false;
+    public bool followLeader = true;
     public Bounds bound;
 
     [Header("Fish Settings")]
@@ -37,5 +37,6 @@ public class FlockingManager : MonoBehaviour
             allFish[i].GetComponent<Flocking>().myManager = this;
         }
     }
+
 
 }
