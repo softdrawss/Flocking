@@ -24,7 +24,7 @@ public class FlockingManager : MonoBehaviour
     void Start()
     {
         allFish = new GameObject[numFish];
-        bound = new Bounds(fishprefab.transform.position, swimLimits);
+        bound = new Bounds(transform.position, swimLimits);
 
         for (int i = 0; i < numFish; ++i)
         {
