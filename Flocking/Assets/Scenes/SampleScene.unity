@@ -213,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621158441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.15, z: 0}
+  m_LocalPosition: {x: -14.95, y: -3.15, z: 0}
   m_LocalScale: {x: 7.318214, y: 3.399697, z: 7.318214}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -404,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725058503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13, y: 1.09, z: 0}
+  m_LocalPosition: {x: -14.82, y: 1.09, z: 0}
   m_LocalScale: {x: 8.546942, y: 3.9705062, z: 8.546942}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -488,7 +488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -26.1}
+  m_LocalPosition: {x: -13.3, y: 2.2, z: -26.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -585,7 +585,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045285494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.4, z: 0}
+  m_LocalPosition: {x: -14.95, y: -0.4, z: 0}
   m_LocalScale: {x: 9.452628, y: 3.8350508, z: 9.452628}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -682,7 +682,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067776480}
   m_LocalRotation: {x: -0, y: -0, z: 0.00659886, w: 0.9999783}
-  m_LocalPosition: {x: 0, y: 2.46, z: 0}
+  m_LocalPosition: {x: -14.95, y: 2.46, z: 0}
   m_LocalScale: {x: 7.318214, y: 3.399697, z: 7.318214}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd472b64dc913e4aa274ff830041059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishprefab: {fileID: 812968932916327153, guid: dfbe6b4e4e226864ab1b7f536d805dfc, type: 3}
+  fishprefab: {fileID: 4753341906496838310, guid: 6d6f7e34f51563243968dc518fa7dde9, type: 3}
   numFish: 50
   allFish:
   - {fileID: 0}
@@ -783,7 +783,7 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   minSpeed: 3
   maxSpeed: 6
-  neighbourDistance: 100
+  neighbourDistance: 5
   rotationSpeed: 2
 --- !u!135 &1223011640
 SphereCollider:
@@ -856,7 +856,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223011638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.25, z: 0}
+  m_LocalPosition: {x: -14.95, y: -0.25, z: 0}
   m_LocalScale: {x: 7.3198, y: 10.3348255, z: 7.3198}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -953,7 +953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028627011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.75, z: 0}
+  m_LocalPosition: {x: -14.95, y: -1.75, z: 0}
   m_LocalScale: {x: 8.546942, y: 3.9705062, z: 8.546942}
   m_ConstrainProportionsScale: 0
   m_Children: []
